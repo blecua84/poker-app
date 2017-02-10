@@ -1,6 +1,4 @@
-package com.blecua84.pokerapp.game.config;
-
-import com.blecua84.pokerapp.game.data.PlayerState;
+package com.blecua84.pokerapp.game.data;
 
 import javax.smartcardio.Card;
 

@@ -1,7 +1,7 @@
 package com.blecua84.pokerapp.game.actions;
 
 import com.blecua84.pokerapp.api.data.Card;
-import com.blecua84.pokerapp.game.config.PlayerInfo;
+import com.blecua84.pokerapp.game.data.PlayerInfo;
 import com.blecua84.pokerapp.game.data.BetCommand;
 import com.blecua84.pokerapp.game.data.GameInfo;
 

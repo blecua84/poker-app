@@ -1,7 +1,6 @@
 package com.blecua84.pokerapp.game.data;
 
 import com.blecua84.pokerapp.api.data.Card;
-import com.blecua84.pokerapp.game.config.PlayerInfo;
 import com.blecua84.pokerapp.game.config.Settings;
 import com.blecua84.pokerapp.game.TexasHoldEmUtil;
 
