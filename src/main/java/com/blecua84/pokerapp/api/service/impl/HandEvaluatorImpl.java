@@ -2,6 +2,8 @@ package com.blecua84.pokerapp.api.service.impl;
 
 import com.blecua84.pokerapp.api.data.Card;
 import com.blecua84.pokerapp.api.data.Hands;
+import com.blecua84.pokerapp.api.data.Rank;
+import com.blecua84.pokerapp.api.data.Suit;
 import com.blecua84.pokerapp.api.exceptions.ExceptionUtil;
 import com.blecua84.pokerapp.api.service.HandEvaluator;
 
@@ -16,7 +18,7 @@ import java.util.Set;
  */
 public class HandEvaluatorImpl implements HandEvaluator {
 
-    private static final int ENCODE_BASE = Card.Rank.ACE.ordinal() + 1;
+    private static final int ENCODE_BASE = Rank.ACE.ordinal() + 1;
     private static final int INDEXES_LENGTH = 2;
     private static final int RANK_INDEX = 0;
     private static final int REPEATS_INDEX = 1;
@@ -34,7 +36,7 @@ public class HandEvaluatorImpl implements HandEvaluator {
     private final int[] ranks = new int[ENCODE_BASE];
 
     // Array que contiene todos los palos existentes en la baraja
-    private final int[] suits = new int[Card.Suit.values().length];
+    private final int[] suits = new int[Suit.values().length];
 
     // Flag para determinar si la jugada es "escalera"
     private boolean isStraight = false;
@@ -101,13 +103,13 @@ public class HandEvaluatorImpl implements HandEvaluator {
         boolean isStraight5toAce = false;
 
         // Evaluamos si nos encontramos en el caso especial de la escalera al 5
-        if(ranks[Card.Rank.ACE.ordinal()] == 1 && straightCntr == Hands.CARDS - 1) {
+        if(ranks[Rank.ACE.ordinal()] == 1 && straightCntr == Hands.CARDS - 1) {
             // Si es el caso especial, hay que reorganizar los indices
             isStraight5toAce = true;
             for(int i = 1; i < indexes.length; i++) {
                 indexes[i - 1][RANK_INDEX] = indexes[i][RANK_INDEX];
             }
-            indexes[indexes.length - 1][RANK_INDEX] = Card.Rank.ACE.ordinal();
+            indexes[indexes.length - 1][RANK_INDEX] = Rank.ACE.ordinal();
         }
         return isStraight5toAce;
     }

@@ -2,6 +2,8 @@ package com.blecua84.pokerapp.cucumber;
 
 import com.blecua84.pokerapp.api.data.Card;
 import com.blecua84.pokerapp.api.data.Hands;
+import com.blecua84.pokerapp.api.data.Rank;
+import com.blecua84.pokerapp.api.data.Suit;
 import com.blecua84.pokerapp.api.service.HandEvaluator;
 import com.blecua84.pokerapp.api.service.impl.HandEvaluatorImpl;
 import cucumber.api.java.en.Given;
@@ -60,21 +62,21 @@ public class HandEvaluatorSteps {
         return cards;
     }
 
-    private static Card.Suit charToSuit(char cSuite) {
-        Card.Suit suit = null;
+    private static Suit charToSuit(char cSuite) {
+        Suit suit = null;
 
         switch (cSuite) {
             case '♠':
-                suit = Card.Suit.SPADE;
+                suit = Suit.SPADE;
                 break;
             case '♥':
-                suit = Card.Suit.HEART;
+                suit = Suit.HEART;
                 break;
             case '♦':
-                suit = Card.Suit.DIAMOND;
+                suit = Suit.DIAMOND;
                 break;
             case '♣':
-                suit = Card.Suit.CLUB;
+                suit = Suit.CLUB;
                 break;
             default:
                 break;
@@ -83,48 +85,48 @@ public class HandEvaluatorSteps {
         return suit;
     }
 
-    private static Card.Rank charToRank(char cRank) {
-        Card.Rank rank = null;
+    private static Rank charToRank(char cRank) {
+        Rank rank = null;
 
         switch (cRank) {
             case '2':
-                rank = Card.Rank.TWO;
+                rank = Rank.TWO;
                 break;
             case '3':
-                rank = Card.Rank.THREE;
+                rank = Rank.THREE;
                 break;
             case '4':
-                rank = Card.Rank.FOUR;
+                rank = Rank.FOUR;
                 break;
             case '5':
-                rank = Card.Rank.FIVE;
+                rank = Rank.FIVE;
                 break;
             case '6':
-                rank = Card.Rank.SIX;
+                rank = Rank.SIX;
                 break;
             case '7':
-                rank = Card.Rank.SEVEN;
+                rank = Rank.SEVEN;
                 break;
             case '8':
-                rank = Card.Rank.EIGHT;
+                rank = Rank.EIGHT;
                 break;
             case '9':
-                rank = Card.Rank.NINE;
+                rank = Rank.NINE;
                 break;
             case 'T':
-                rank = Card.Rank.TEN;
+                rank = Rank.TEN;
                 break;
             case 'J':
-                rank = Card.Rank.JACK;
+                rank = Rank.JACK;
                 break;
             case 'Q':
-                rank = Card.Rank.QUEEN;
+                rank = Rank.QUEEN;
                 break;
             case 'K':
-                rank = Card.Rank.KING;
+                rank = Rank.KING;
                 break;
             case 'A':
-                rank = Card.Rank.ACE;
+                rank = Rank.ACE;
                 break;
             default:
                 break;

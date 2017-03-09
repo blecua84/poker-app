@@ -18,12 +18,12 @@ import static org.hamcrest.CoreMatchers.not;
 public class CardTest extends TestCase {
 
     private static Card[] getAllCards() {
-        Card[] result = new Card[Card.Suit.values().length * Card.Rank.values().length];
+        Card[] result = new Card[Suit.values().length * Rank.values().length];
 
         int i = 0;
 
-        for(Card.Suit suit : Card.Suit.values()) {
-            for(Card.Rank rank : Card.Rank.values()) {
+        for(Suit suit : Suit.values()) {
+            for(Rank rank : Rank.values()) {
                 result[i] = new Card(suit, rank);
                 i++;
             }
@@ -47,7 +47,7 @@ public class CardTest extends TestCase {
     @Test
     public void testEqualsOtherObjects() {
         System.out.println("equalsOtherObjects");
-        Card card = new Card(Card.Suit.CLUB, Card.Rank.ACE);
+        Card card = new Card(Suit.CLUB, Rank.ACE);
         assertNotEquals("card: " + card + " != null", card, null);
         assertNotEquals("card: " + card + " != 0", card, 0);
         assertNotEquals("card: " + card + " != \"2C\"", card, "2C");
@@ -88,14 +88,14 @@ public class CardTest extends TestCase {
     @Test
     public void testConstructor() {
        System.out.println("card()");
-        Card.Suit expSuit = Card.Suit.CLUB;
-        Card.Rank expRank = Card.Rank.TWO;
+        Suit expSuit = Suit.CLUB;
+        Rank expRank = Rank.TWO;
 
         Card instance = new Card(expSuit, expRank);
-        Card.Suit suitResult = instance.getSuit();
+        Suit suitResult = instance.getSuit();
         assertEquals(expSuit, suitResult);
 
-        Card.Rank rankResult = instance.getRank();
+        Rank rankResult = instance.getRank();
         assertEquals(expRank, rankResult);
     }
 
@@ -104,8 +104,8 @@ public class CardTest extends TestCase {
         System.out.println("card(SuitNull)");
 
         try {
-            Card.Suit expSuit = null;
-            Card.Rank expRank = Card.Rank.TWO;
+            Suit expSuit = null;
+            Rank expRank = Rank.TWO;
             Card instance = new Card(expSuit, expRank);
         } catch (IllegalArgumentException e) {
             System.out.println("card(SuitNull) --> Resultado esperado...");
@@ -117,8 +117,8 @@ public class CardTest extends TestCase {
         System.out.println("card(RankNull)");
 
         try {
-            Card.Suit expSuit = Card.Suit.CLUB;
-            Card.Rank expRank = null;
+            Suit expSuit = Suit.CLUB;
+            Rank expRank = null;
             Card instance = new Card(expSuit, expRank);
         } catch (IllegalArgumentException e) {
             System.out.println("card(RankNull) --> Resultado esperado...");

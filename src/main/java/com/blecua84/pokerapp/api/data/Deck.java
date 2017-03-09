@@ -45,11 +45,11 @@ public class Deck {
     }
 
     private static List<Card> getAllCards() {
-        int numCards = Card.Suit.values().length * Card.Rank.values().length;
+        int numCards = Suit.values().length * Rank.values().length;
 
         List<Card> cardList = new ArrayList<>(numCards);
-        for(Card.Suit suit: Card.Suit.values()) {
-            for(Card.Rank rank: Card.Rank.values()) {
+        for(Suit suit: Suit.values()) {
+            for(Rank rank: Rank.values()) {
                 cardList.add(new Card(suit, rank));
             }
         }

@@ -1,6 +1,8 @@
 package com.blecua84.pokerapp.api.service;
 
 import com.blecua84.pokerapp.api.data.Card;
+import com.blecua84.pokerapp.api.data.Rank;
+import com.blecua84.pokerapp.api.data.Suit;
 import com.blecua84.pokerapp.api.service.impl.HandEvaluatorImpl;
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,11 +25,11 @@ public class HandEvaluatorTest {
     }
 
     private void pareja4() {
-        cards[0] = new Card(Card.Suit.CLUB, Card.Rank.FOUR);
-        cards[1] = new Card(Card.Suit.HEART, Card.Rank.KING);
-        cards[2] = new Card(Card.Suit.SPADE, Card.Rank.THREE);
-        cards[3] = new Card(Card.Suit.SPADE, Card.Rank.FOUR);
-        cards[4] = new Card(Card.Suit.DIAMOND, Card.Rank.FIVE);
+        cards[0] = new Card(Suit.CLUB, Rank.FOUR);
+        cards[1] = new Card(Suit.HEART, Rank.KING);
+        cards[2] = new Card(Suit.SPADE, Rank.THREE);
+        cards[3] = new Card(Suit.SPADE, Rank.FOUR);
+        cards[4] = new Card(Suit.DIAMOND, Rank.FIVE);
     }
 
     @Test
