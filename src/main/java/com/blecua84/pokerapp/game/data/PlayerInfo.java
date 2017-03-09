@@ -1,6 +1,7 @@
 package com.blecua84.pokerapp.game.data;
 
-import javax.smartcardio.Card;
+
+import com.blecua84.pokerapp.api.data.Card;
 
 /**
  * Clase que contiene la información de cada jugador.
@@ -74,5 +75,13 @@ public class PlayerInfo {
 
     public Card getCard(int index) {
         return cards[index];
+    }
+
+    public boolean isActive() {
+        return state.isActive();
+    }
+
+    public void addChips(long chips) {
+
     }
 }

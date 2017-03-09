@@ -1,5 +1,6 @@
 package com.blecua84.pokerapp.game.actions;
 
+import com.blecua84.pokerapp.api.exceptions.GameException;
 import com.blecua84.pokerapp.game.config.Settings;
 
 /**
@@ -13,7 +14,7 @@ public interface GameController {
 
     public boolean addStrategy(Strategy strategy);
 
-    public void start();
+    public void start() throws GameException;
 
     public void waitFinish();
 }

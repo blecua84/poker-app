@@ -29,6 +29,7 @@ public class ModelContext {
     private BetCommand lastBetCommand;
     private PlayerEntity lastPlayerBet;
     private int bets = 0;
+    private int lastActivePlayers;
 
     public ModelContext(Settings settings) {
         this.gameInfo.setSettings(settings);
@@ -197,5 +198,9 @@ public class ModelContext {
 
     public void clearCommunityCard() {
         gameInfo.clearCommunityCard();
+    }
+
+    public void setLastActivePlayers(int lastActivePlayers) {
+        this.lastActivePlayers = lastActivePlayers;
     }
 }
